@@ -1,0 +1,25 @@
+
+.root-app-container {
+  height: 100vh;
+  background: black;
+  color: white;
+
+  $header-height: 64px;
+
+  .router-outlet-container {
+    height: calc(100vh - #{$header-height});
+    overflow-y: auto; 
+  }
+
+  a {
+    color: cornflowerblue;
+    text-decoration: none;
+    padding: 8px;
+
+    transition: color 150ms;
+    &:hover {
+      color: darken(cornflowerblue, 15%);
+    }
+  }
+
+}

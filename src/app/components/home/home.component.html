@@ -1,0 +1,17 @@
+<div class="home-page">
+  <h1>About:</h1>
+  <div class="overview">
+    This is the home page, below you will find a table of randomly generated forecasts using the material library. This is just an example app
+    showcasing some of the cool things about angular + material. It is and always will be a work in progress.
+  </div>
+
+  <h1>12 Day Forecast:</h1>
+  <div class="forecast-card-container">
+    <app-forecast-card *ngFor="let forecast of forecastCards" [forecast]="forecast"></app-forecast-card>
+  </div>
+
+  
+
+  <div class="spacing">Display at the bottom below to test scrolling/hidden content</div>
+
+</div>

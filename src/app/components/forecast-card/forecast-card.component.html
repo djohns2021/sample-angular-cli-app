@@ -1,0 +1,9 @@
+<div class="forecast-card">
+  <mat-card>
+    <mat-card-title>{{forecast.date}}</mat-card-title>
+    <img mat-card-image [src]="getForecastIcon()">
+    <mat-card-content>{{getSelectedTemperature()}}</mat-card-content>
+    <!-- The number pipe used below just formats it so that there aren't potentially a ton of fractional trailing numbers -->
+    <mat-card-content>Precip Chance: {{forecast.precipitation | number:'1.0-0'}}%</mat-card-content>
+  </mat-card>
+</div>
