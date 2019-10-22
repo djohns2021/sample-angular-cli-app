@@ -6,8 +6,12 @@
   </div>
 
   <h1>12 Day Forecast:</h1>
+  <h3>Temp Unit:</h3>
+  <div class="temp-unit-container">
+    <button *ngFor="let tempType of temperatureUnitArray" mat-stroked-button (click)="changeTempUnit(tempType)">{{tempType}}</button>
+  </div>
   <div class="forecast-card-container">
-    <app-forecast-card *ngFor="let forecast of forecastCards" [forecast]="forecast"></app-forecast-card>
+    <app-forecast-card *ngFor="let forecast of forecastCards" [forecast]="forecast" [tempType]="tempUnit"></app-forecast-card>
   </div>
 
   

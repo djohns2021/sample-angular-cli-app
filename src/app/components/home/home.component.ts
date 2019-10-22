@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Forecast } from 'src/app/models/forecast';
+import { Forecast, TempTypes } from 'src/app/models/forecast';
 import * as moment from 'moment';
 
 @Component({
@@ -12,10 +12,22 @@ export class HomeComponent implements OnInit {
 
   forecastCards: Forecast[];
   today: moment.Moment;
+  tempUnit: TempTypes = TempTypes.fahrenheit;
+
+  /**
+   * Returns the enum values of TempTypes as an array of strings
+   */
+  get temperatureUnitArray(): string[] {
+    return Object.values(TempTypes);
+  }
 
   ngOnInit() {
     this.today = moment();
     this.forecastCards = this.generateForecasts();
+  }
+
+  changeTempUnit(tempType: TempTypes) {
+    this.tempUnit = tempType;
   }
 
   /**

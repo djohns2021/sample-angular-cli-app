@@ -14,8 +14,17 @@
     font-family: 'Roboto', sans-serif;
   }
 
-  h1 {
+  h1, h3 {
     text-align: center;
+  }
+
+  .temp-unit-container {
+    margin: auto;
+    text-align: center;
+    button {
+      width: 100px;
+      margin: 0px 8px;
+    }
   }
 
   .forecast-card-container {

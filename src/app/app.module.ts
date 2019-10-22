@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 // Material Components
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 // Components
 import { AppComponent } from 'src/app/app.component';
@@ -28,7 +29,8 @@ import { ForecastCardComponent } from 'src/app/components/forecast-card/forecast
     BrowserAnimationsModule,
     RouterModule,
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

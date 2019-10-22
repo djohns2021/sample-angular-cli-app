@@ -9,8 +9,7 @@ import { Forecast, TempTypes } from 'src/app/models/forecast';
 export class ForecastCardComponent implements OnInit {
   @Input() forecast: Forecast;
   @Input() tempType: TempTypes = TempTypes.fahrenheit;
-  constructor() {}
-
+  // TODO - Add in Inputs maybe for localization, custom icon sets, etc
 
   ngOnInit() {
     if (!this.forecast) {
@@ -18,6 +17,9 @@ export class ForecastCardComponent implements OnInit {
     }
   }
 
+  /**
+   * Returns a temperature based on the desired format
+   */
   getSelectedTemperature(): string {
     switch(this.tempType) {
       case TempTypes.fahrenheit: {
@@ -26,7 +28,7 @@ export class ForecastCardComponent implements OnInit {
       case TempTypes.celsius: {
         return `${Math.round(this.forecast.temperatureC)} C`;
       }
-      case TempTypes.fahrenheit: {
+      case TempTypes.kelvin: {
         return `${Math.round(this.forecast.temperatureK)} K`;
       }
       default: {
@@ -35,6 +37,9 @@ export class ForecastCardComponent implements OnInit {
     }
   }
 
+  /**
+   * Quick hack to 'randomly' select an icon
+   */
   getForecastIcon(): string {
     if (this.forecast.precipitation > 50) {
       return '/assets/rain.png';
